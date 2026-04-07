@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Models\Department;
 use App\Models\Program;
 use Illuminate\View\View;
 
@@ -29,7 +28,7 @@ class PublicProgramController extends Controller
      */
     public function show(Program $program): View
     {
-        $program->load(['department', 'courses']);
+        $program->load(['department']);
 
         return view('public.programs.show', [
             'program' => $program,

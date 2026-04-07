@@ -51,10 +51,12 @@ class ProgramResource extends Resource
                         Forms\Components\Select::make('degree_level')
                             ->label('Degree Level')
                             ->options([
-                                'associate' => 'Associate Degree',
-                                'bachelor' => 'Bachelor Degree',
-                                'master' => 'Master Degree',
-                                'phd' => 'PhD',
+                                'bs' => 'Bachelor of Science (BS)',
+                                'ms' => 'Master of Science (MS)',
+                                'mengg' => 'Master of Engineering (M.Eng.)',
+                                'de' => 'Diploma in Engineering (DE)',
+                                'phd' => 'Doctor of Philosophy (PhD)',
+                                'diploma' => 'Diploma',
                             ])
                             ->required(),
                         Forms\Components\TextInput::make('duration_years')

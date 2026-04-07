@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="University of Perpetual Help System DALTA - College of Engineering, Architecture, and Technology. Discover world-class engineering programs.">
-    <title>{{ config('app.name') }} - UPH Engineering CMS</title>
+    <title>College of Engineering CMS</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -52,18 +52,22 @@
                 <a href="{{ route('home') }}" class="flex items-center gap-3 group">
                     <div class="relative">
                         <div class="w-10 h-10 bg-gradient-to-br from-maroon-600 to-maroon-800 rounded-xl flex items-center justify-center text-white font-bold text-xs shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                            UPH
+                            
                         </div>
                         <div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-primary-500 rounded-full border-2 border-white shadow-md"></div>
                     </div>
                     <div class="hidden sm:block">
-                        <span class="font-bold text-maroon-800 text-sm tracking-tight">UPH Engineering</span>
+                        <span class="font-bold text-maroon-800 text-sm tracking-tight">College of Engineering</span>
                         <span class="block text-[10px] text-gray-500 font-semibold tracking-widest uppercase">CEAT</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden lg:flex items-center gap-0.5">
+                    <a href="{{ route('view.about') }}" class="group relative px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-maroon-700 transition-colors">
+                        About
+                        <span class="accent-line"></span>
+                    </a>
                     <a href="{{ route('view.departments') }}" class="group relative px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-maroon-700 transition-colors">
                         Departments
                         <span class="accent-line"></span>
@@ -112,6 +116,7 @@
 
             <!-- Mobile Menu -->
             <div x-show="mobileOpen" x-transition class="lg:hidden pb-6 border-t border-gray-100 mt-2 space-y-2">
+                <a href="{{ route('view.about') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">About</a>
                 <a href="{{ route('view.departments') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Departments</a>
                 <a href="{{ route('view.programs') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Programs</a>
                 <a href="{{ route('view.faculty') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Faculty</a>
@@ -142,7 +147,7 @@
                     <div class="space-y-4">
                         <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 rounded-full border border-primary-200">
                             <span class="w-2 h-2 bg-primary-600 rounded-full"></span>
-                            <span class="text-sm font-semibold text-primary-700">Welcome to UPH Engineering</span>
+                            <span class="text-sm font-semibold text-primary-700">Welcome to College of Engineering</span>
                         </div>
                         <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight">
                             Excellence in
@@ -278,7 +283,7 @@
                     Latest News & Events
                 </h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Keep informed about important announcements and upcoming events in UPH Engineering.
+                    Keep informed about important announcements and upcoming events in College of Engineering.
                 </p>
             </div>
 
@@ -331,7 +336,7 @@
                 Ready to Start Your Engineering Journey?
             </h2>
             <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-                Join thousands of students and become part of UPH Engineering's legacy of excellence.
+                Join thousands of students and become part of College of Engineering's legacy of excellence.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ route('register') }}" class="px-8 py-4 bg-primary-500 text-maroon-900 font-bold rounded-xl hover:bg-primary-400 hover:scale-105 transition-all duration-300 shadow-lg">
@@ -351,8 +356,8 @@
                 <!-- Brand -->
                 <div class="space-y-4">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-br from-maroon-600 to-maroon-800 rounded-xl flex items-center justify-center text-white font-bold text-xs">UPH</div>
-                        <span class="font-bold text-white">UPH Engineering</span>
+                        <div class="w-10 h-10 bg-gradient-to-br from-maroon-600 to-maroon-800 rounded-xl flex items-center justify-center text-white font-bold text-xs">CEAT</div>
+                        <span class="font-bold text-white">College of Engineering</span>
                     </div>
                     <p class="text-sm text-gray-400">College of Engineering, Architecture, and Technology</p>
                 </div>
@@ -361,6 +366,7 @@
                 <div class="space-y-4">
                     <h3 class="font-bold text-white text-sm uppercase tracking-wider">Programs</h3>
                     <ul class="space-y-2 text-sm">
+                        <li><a href="{{ route('view.about') }}" class="hover:text-white transition-colors">About</a></li>
                         <li><a href="{{ route('view.programs') }}" class="hover:text-white transition-colors">All Programs</a></li>
                         <li><a href="{{ route('view.departments') }}" class="hover:text-white transition-colors">Departments</a></li>
                         <li><a href="{{ route('view.faculty') }}" class="hover:text-white transition-colors">Faculty</a></li>
@@ -381,7 +387,7 @@
                 <div class="space-y-4">
                     <h3 class="font-bold text-white text-sm uppercase tracking-wider">Contact</h3>
                     <ul class="space-y-2 text-sm">
-                        <li class="flex items-center gap-2">✉ info@uphsd.edu.ph</li>
+                        <li class="flex items-center gap-2">✉ info@College ofsd.edu.ph</li>
                         <li class="flex items-center gap-2">☎ +63 2 8xxx xxxx</li>
                         <li class="flex items-center gap-2">◉ Las Piñas, Manila</li>
                     </ul>
@@ -390,7 +396,7 @@
 
             <div class="border-t border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                    <p>&copy; 2024 UPH Engineering CMS. All rights reserved.</p>
+                    <p>&copy; 2024 College of Engineering CMS. All rights reserved.</p>
                     <div class="flex gap-6 mt-4 md:mt-0">
                         <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
                         <a href="#" class="hover:text-white transition-colors">Terms of Service</a>

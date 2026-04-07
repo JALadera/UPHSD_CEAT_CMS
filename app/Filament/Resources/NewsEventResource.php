@@ -87,10 +87,15 @@ class NewsEventResource extends Resource
                             ])
                             ->required()
                             ->default('draft'),
-                        Forms\Components\TextInput::make('featured_image')
-                            ->label('Featured Image URL')
-                            ->url()
-                            ->maxLength(255),
+                        Forms\Components\FileUpload::make('featured_image')
+                            ->label('Featured Image')
+                            ->image()
+                            ->imageEditor()
+                            ->disk('public')
+                            ->directory('news')
+                            ->maxSize(5120) // 5MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                            ->helperText('Upload an image (JPEG, PNG, or WebP). Max 5MB.'),
                     ])->columns(2),
             ]);
     }

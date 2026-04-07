@@ -8,6 +8,7 @@ use App\Http\Controllers\PublicDepartmentController;
 use App\Http\Controllers\PublicProgramController;
 use App\Http\Controllers\PublicFacultyController;
 use App\Http\Controllers\PublicNewsEventController;
+use App\Http\Controllers\PublicAboutController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +18,8 @@ Route::get('/', function () {
 // Public Routes (accessible without authentication)
 Route::get('/departments', [PublicDepartmentController::class, 'index'])->name('view.departments');
 Route::get('/departments/{department:slug}', [PublicDepartmentController::class, 'show'])->name('view.departments.show');
+
+Route::get('/about', [PublicAboutController::class, 'index'])->name('view.about');
 
 Route::get('/programs', [PublicProgramController::class, 'index'])->name('view.programs');
 Route::get('/programs/{program:slug}', [PublicProgramController::class, 'show'])->name('view.programs.show');

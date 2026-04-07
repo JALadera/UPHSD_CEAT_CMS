@@ -15,7 +15,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans text-gray-900 antialiased">
+<body class="font-sans text-gray-900 antialiased style="background-image: url('{{ asset('images/bg-auth.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed;">
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gradient-to-br from-gray-50 via-white to-maroon-50/30 relative overflow-hidden">
         <!-- Decorative elements -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -33,7 +33,7 @@
                     UPH
                 </div>
                 <div class="text-center">
-                    <span class="block font-bold text-maroon-700 text-lg">UPH Engineering</span>
+                    <span class="block font-bold text-maroon-700 text-lg">College of Engineering</span>
                     <span class="block text-xs text-gray-400 tracking-wider uppercase">Content Management System</span>
                 </div>
             </a>

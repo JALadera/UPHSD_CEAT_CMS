@@ -41,6 +41,9 @@
 
                     <!-- Desktop Navigation -->
                     <div class="hidden lg:flex items-center gap-1">
+                        <a href="{{ route('view.about') }}" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-maroon-600 hover:bg-maroon-50 rounded-lg transition-all duration-200 {{ request()->routeIs('view.about') ? 'text-maroon-600 bg-maroon-50' : '' }}">
+                            About
+                        </a>
                         <a href="{{ route('view.departments') }}" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-maroon-600 hover:bg-maroon-50 rounded-lg transition-all duration-200 {{ request()->routeIs('view.departments*') ? 'text-maroon-600 bg-maroon-50' : '' }}">
                             Departments
                         </a>
@@ -93,6 +96,7 @@
                      x-transition:leave-end="opacity-0 -translate-y-2"
                      class="lg:hidden pb-4 border-t border-gray-100 mt-2">
                     <div class="pt-4 space-y-1">
+                        <a href="{{ route('view.about') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">About</a>
                         <a href="{{ route('view.departments') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Departments</a>
                         <a href="{{ route('view.programs') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Programs</a>
                         <a href="{{ route('view.faculty') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Faculty</a>
@@ -145,8 +149,9 @@
 
                     <!-- Quick Links -->
                     <div>
-                        <h4 class="font-semibold text-white mb-5 text-sm tracking-wider uppercase">Academic</h4>
+                        <h4 class="font-semibold text-white mb-5 text-sm tracking-wider uppercase">Quick Links</h4>
                         <ul class="space-y-3 text-sm">
+                            <li><a href="{{ route('view.about') }}" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-maroon-500"></span>About</a></li>
                             <li><a href="{{ route('view.departments') }}" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-maroon-500"></span>Departments</a></li>
                             <li><a href="{{ route('view.programs') }}" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-maroon-500"></span>Programs</a></li>
                             <li><a href="{{ route('view.faculty') }}" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-maroon-500"></span>Faculty</a></li>
