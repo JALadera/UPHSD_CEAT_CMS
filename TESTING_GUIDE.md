@@ -39,7 +39,7 @@ curl -I http://localhost:8002/news/latest-event
 
 #### Navigation Component
 - [ ] Logo appears in top-left with UPH badge
-- [ ] Navigation links visible on desktop (Departments, Programs, Faculty, Research, News)
+- [ ] Navigation links visible on desktop (Departments, Programs, Faculty, News)
 - [ ] Auth buttons visible (Sign In, Register)
 - [ ] Mobile hamburger menu visible on small screens
 - [ ] Header background changes on scroll (becomes more opaque)
@@ -189,7 +189,7 @@ Use Chrome DevTools Lighthouse:
 - [ ] All departments appear in listings
 - [ ] Faculty members display with info
 - [ ] Program details correct
-- [ ] Research centers listed
+- [ ]  listed
 - [ ] News/events show with dates
 
 #### Data Accuracy

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="{{ $metaDescription ?? 'University of Perpetual Help System DALTA - College of Engineering, Architecture, and Technology' }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <title>{{ $title ?? config('app.name') }} | UPH Engineering</title>
 
@@ -49,9 +50,7 @@
                         <a href="{{ route('view.faculty') }}" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-maroon-600 hover:bg-maroon-50 rounded-lg transition-all duration-200 {{ request()->routeIs('view.faculty*') ? 'text-maroon-600 bg-maroon-50' : '' }}">
                             Faculty
                         </a>
-                        <a href="{{ route('view.research') }}" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-maroon-600 hover:bg-maroon-50 rounded-lg transition-all duration-200 {{ request()->routeIs('view.research*') ? 'text-maroon-600 bg-maroon-50' : '' }}">
-                            Research
-                        </a>
+
                         <a href="{{ route('view.news') }}" class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-maroon-600 hover:bg-maroon-50 rounded-lg transition-all duration-200 {{ request()->routeIs('view.news*') ? 'text-maroon-600 bg-maroon-50' : '' }}">
                             News
                         </a>
@@ -97,7 +96,7 @@
                         <a href="{{ route('view.departments') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Departments</a>
                         <a href="{{ route('view.programs') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Programs</a>
                         <a href="{{ route('view.faculty') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Faculty</a>
-                        <a href="{{ route('view.research') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">Research</a>
+
                         <a href="{{ route('view.news') }}" class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-maroon-50 hover:text-maroon-600 font-medium transition-colors">News & Events</a>
                     </div>
                     <div class="mt-4 pt-4 border-t border-gray-100 space-y-2 px-4">
@@ -140,7 +139,7 @@
                             </div>
                         </div>
                         <p class="text-sm text-gray-500 leading-relaxed max-w-xs">
-                            Building the future through excellence in engineering education, innovative research, and community service.
+                            Building the future through excellence in engineering education and community service.
                         </p>
                     </div>
 
@@ -158,7 +157,7 @@
                         <h4 class="font-semibold text-white mb-5 text-sm tracking-wider uppercase">Resources</h4>
                         <ul class="space-y-3 text-sm">
                             <li><a href="{{ route('view.news') }}" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-primary-500"></span>News & Events</a></li>
-                            <li><a href="{{ route('view.research') }}" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-primary-500"></span>Research</a></li>
+
                             <li><a href="#" class="hover:text-primary-400 transition-colors duration-200 flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-primary-500"></span>Support</a></li>
                         </ul>
                     </div>

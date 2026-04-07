@@ -293,7 +293,7 @@ xl: 32px
 - `resources/css/app.css` - Added utility classes (in progress)
 
 ### To Update
-- All public view files (departments, programs, faculty, research, news)
+- All public view files (departments, programs, faculty, news)
 
 ---
 

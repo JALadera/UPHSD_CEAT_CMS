@@ -25,7 +25,7 @@ All 11 public-facing pages now render without component errors:
 - ✅ `/departments` - Departments listing
 - ✅ `/programs` - Programs listing
 - ✅ `/faculty` - Faculty listing
-- ✅ `/research` - Research centers listing
+- ✅ `/research` -  listing
 - ✅ `/news` - News & events listing
 
 ### Show/Detail Pages (5)

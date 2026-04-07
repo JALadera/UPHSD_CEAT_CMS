@@ -26,7 +26,7 @@
 - **Replaced All Emojis** with Unicode shape icons across entire project
   - ✓ Welcome page (8 emojis replaced)
   - ✓ Dashboard pages (admin, student, superadmin)
-  - ✓ All public views (departments, programs, faculty, research, news)
+  - ✓ All public views (departments, programs, faculty, news)
   - ✓ Footer and navigation components
 
 **Shape Icons Used**:
@@ -54,7 +54,7 @@
 - **File**: `resources/views/welcome.blade.php`
 - **Features**:
   - Hero section with animated background
-  - Stats cards (departments, programs, faculty, research centers)
+  - Stats cards (departments, programs, faculty centers)
   - News & Events carousel (auto-rotating, 5-second intervals)
   - Featured departments grid (8 departments)
   - CTA sections
@@ -129,17 +129,6 @@
   - Related links (department, all faculty)
 - **Status**: ✅ Complete
 
-#### 8. **Research Centers** (`/research`)
-- **File**: `resources/views/public/research/index.blade.php`
-- **Features**:
-  - Hero section
-  - Research centers grid
-  - Center cards with focus areas
-  - Empty state handling
-  - Pagination support
-- **Status**: ✅ Complete
-
-#### 9. **Research Center Detail** (`/research/{slug}`)
 - **File**: `resources/views/public/research/show.blade.php`
 - **Features**:
   - Research center header
@@ -183,14 +172,14 @@
 - **Features**:
   - Welcome message with student ID
   - Quick links to main sections
-  - Programs, faculty, research, news links
+  - Programs, faculty, news links
 - **Status**: ✅ Complete
 
 #### 13. **Admin Dashboard** (`/admin/dashboard`)
 - **File**: `resources/views/admin/dashboard.blade.php`
 - **Features**:
   - Content management section
-  - Quick actions (students, research management, reports)
+  - Quick actions (students management, reports)
 - **Status**: ✅ Complete
 
 #### 14. **Superadmin Dashboard** (`/superadmin/dashboard`)

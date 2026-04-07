@@ -28,7 +28,7 @@ Status: ✅ FIXED
 
 ### Verification
 ✅ All 11 public pages tested and confirmed working:
-- 6 Index pages (Departments, Programs, Faculty, Research, News, Home)
+- 6 Index pages (Departments, Programs, Faculty, News, Home)
 - 5 Detail pages (Show pages for each entity)
 
 ---
@@ -90,7 +90,7 @@ Status: ✅ FIXED
 | Program Show | `/programs/{slug}` | ✅ | Program details |
 | Faculty Index | `/faculty` | ✅ | Grid of faculty |
 | Faculty Show | `/faculty/{id}` | ✅ | Faculty member details |
-| Research Index | `/research` | ✅ | Grid of research centers |
+| Research Index | `/research` | ✅ | Grid of  |
 | Research Show | `/research/{slug}` | ✅ | Research center details |
 | News Index | `/news` | ✅ | Grid of news/events |
 | News Show | `/news/{slug}` | ✅ | News/event details |

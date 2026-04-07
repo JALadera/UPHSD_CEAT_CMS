@@ -76,10 +76,7 @@
                         Faculty
                         <span class="accent-line"></span>
                     </a>
-                    <a href="{{ route('view.research') }}" class="group relative px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-maroon-700 transition-colors">
-                        Research
-                        <span class="accent-line"></span>
-                    </a>
+
                     <a href="{{ route('view.news') }}" class="group relative px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-maroon-700 transition-colors">
                         News
                         <span class="accent-line"></span>
@@ -118,7 +115,7 @@
                 <a href="{{ route('view.departments') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Departments</a>
                 <a href="{{ route('view.programs') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Programs</a>
                 <a href="{{ route('view.faculty') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Faculty</a>
-                <a href="{{ route('view.research') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">Research</a>
+
                 <a href="{{ route('view.news') }}" class="block px-4 py-3 text-gray-700 hover:bg-maroon-50 hover:text-maroon-700 rounded-lg font-medium text-sm transition-colors">News</a>
                 <div class="pt-4 border-t border-gray-100 space-y-2">
                     @auth
@@ -152,9 +149,7 @@
                             <span class="block bg-gradient-to-r from-maroon-600 to-maroon-800 bg-clip-text text-transparent">Engineering</span>
                             Education
                         </h1>
-                        <p class="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                            Discover world-class programs, distinguished faculty expertise, and cutting-edge research at the University of Perpetual Help System DALTA's College of Engineering, Architecture, and Technology.
-                        </p>
+                            Discover world-class programs and distinguished faculty expertise at the University of Perpetual Help System DALTA's College of Engineering, Architecture, and Technology.
                     </div>
 
                     <!-- CTA Buttons -->
@@ -217,7 +212,7 @@
                 <a href="{{ route('view.departments') }}" class="group card-hover bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-maroon-600">
                     <div class="text-4xl mb-4">⚗</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-maroon-700">Chemical Engineering</h3>
-                    <p class="text-sm text-gray-600">Advanced chemical processes and research</p>
+                    <p class="text-sm text-gray-600">Advanced chemical processes</p>
                 </a>
 
                 <a href="{{ route('view.departments') }}" class="group card-hover bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-maroon-600">
@@ -259,7 +254,7 @@
                 <a href="{{ route('view.departments') }}" class="group card-hover bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-maroon-600">
                     <div class="text-4xl mb-4">▲</div>
                     <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-maroon-700">Mining & Materials</h3>
-                    <p class="text-sm text-gray-600">Materials science and research</p>
+                    <p class="text-sm text-gray-600">Materials science</p>
                 </a>
             </div>
 
@@ -297,7 +292,7 @@
                         <div class="p-6">
                             <span class="inline-block px-3 py-1 bg-maroon-100 text-maroon-700 rounded-full text-xs font-bold mb-3">News</span>
                             <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-maroon-700">New Engineering Lab Opens</h3>
-                            <p class="text-gray-600 text-sm line-clamp-3">State-of-the-art robotics and AI laboratory now available for student research.</p>
+                            <p class="text-gray-600 text-sm line-clamp-3">State-of-the-art robotics and AI laboratory now available for students.</p>
                         </div>
                     </div>
                 </a>
@@ -315,18 +310,7 @@
                     </div>
                 </a>
 
-                <a href="{{ route('view.news') }}" class="group">
-                    <div class="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100">
-                        <div class="h-48 bg-gradient-to-br from-maroon-700 to-maroon-900 flex items-center justify-center">
-                            <div class="text-6xl">▬</div>
-                        </div>
-                        <div class="p-6">
-                            <span class="inline-block px-3 py-1 bg-maroon-100 text-maroon-700 rounded-full text-xs font-bold mb-3">Research</span>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-maroon-700">Faculty Publication Highlight</h3>
-                            <p class="text-gray-600 text-sm line-clamp-3">Dr. Maria Santos publishes groundbreaking research on sustainable materials.</p>
-                        </div>
-                    </div>
-                </a>
+
             </div>
 
             <div class="text-center">
@@ -387,7 +371,7 @@
                 <div class="space-y-4">
                     <h3 class="font-bold text-white text-sm uppercase tracking-wider">Resources</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('view.research') }}" class="hover:text-white transition-colors">Research Centers</a></li>
+
                         <li><a href="{{ route('view.news') }}" class="hover:text-white transition-colors">News & Events</a></li>
                         <li><a href="#" class="hover:text-white transition-colors">Admissions</a></li>
                     </ul>

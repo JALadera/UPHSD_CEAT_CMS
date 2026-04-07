@@ -39,7 +39,7 @@
 ### 3. Model Factory Support
 **Issue:** `Call to undefined method App\Models\Department::factory()`
 **Solution:** Added `use HasFactory;` trait to all models
-**Files Updated:** Department.php, Program.php, Course.php, FacultyMember.php, ResearchCenter.php, NewsEvent.php
+**Files Updated:** Department.php, Program.php, Course.php, FacultyMember.phpCenter.php, NewsEvent.php
 **Impact:** Factories now work correctly for seeding
 
 ### 4. Enum Constraint Violations
@@ -269,7 +269,7 @@ database/seeders/TestDataSeeder.php (working, generating 500+ records)
 - ✅ Department listing and detail pages
 - ✅ Program listing and detail pages
 - ✅ Faculty directory
-- ✅ Research centers listing and detail
+- ✅  listing and detail
 - ✅ News and events listing and detail
 - ✅ All with consistent modern design
 

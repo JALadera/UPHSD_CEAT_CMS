@@ -41,8 +41,4 @@ class Program extends Model
         return $this->belongsTo(Department::class);
     }
 
-    public function courses(): HasMany
-    {
-        return $this->hasMany(Course::class);
-    }
 }

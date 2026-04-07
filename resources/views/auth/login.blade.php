@@ -25,8 +25,7 @@
             <x-input-label for="password" :value="__('Password')" class="!text-sm !font-semibold !text-gray-700" />
             <x-text-input id="password"
                 class="block mt-1.5 w-full !rounded-xl !border-gray-200 !bg-gray-50/50 focus:!border-maroon-500 focus:!ring-maroon-500 !py-3 !px-4 transition-all duration-200"
-                type="password" name="password" required autocomplete="current-password"
-                placeholder="••••••••" />
+                type="password" name="password" required autocomplete="current-password" placeholder="••••••••" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
@@ -40,10 +39,10 @@
             </label>
 
             @if (Route::has('password.request'))
-                <a class="text-sm text-maroon-600 hover:text-maroon-700 font-semibold transition-colors"
-                    href="{{ route('password.request') }}">
-                    {{ __('Forgot password?') }}
-                </a>
+            <a class="text-sm text-maroon-600 hover:text-maroon-700 font-semibold transition-colors"
+                href="{{ route('password.request') }}">
+                {{ __('Forgot password?') }}
+            </a>
             @endif
         </div>
 
@@ -55,7 +54,8 @@
         <div class="mt-6 text-center">
             <p class="text-sm text-gray-500">
                 Don't have an account?
-                <a href="{{ route('register') }}" class="text-maroon-600 hover:text-maroon-700 font-bold transition-colors">
+                <a href="{{ route('register') }}"
+                    class="text-maroon-600 hover:text-maroon-700 font-bold transition-colors">
                     Register here
                 </a>
             </p>

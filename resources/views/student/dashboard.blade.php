@@ -51,17 +51,7 @@
                     </div>
                 </a>
 
-                <a href="{{ route('view.research') }}" class="group">
-                    <div class="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 p-6 h-full border border-transparent hover:border-maroon-100">
-                        <div class="w-12 h-12 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">🔬</div>
-                        <h4 class="font-bold text-gray-900 mb-1 group-hover:text-maroon-600 transition-colors">Research Centers</h4>
-                        <p class="text-sm text-gray-500">Discover our research initiatives and centers.</p>
-                        <div class="mt-4 flex items-center text-maroon-600 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            Discover
-                            <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </div>
-                    </div>
-                </a>
+
 
                 <a href="{{ route('view.news') }}" class="group">
                     <div class="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 p-6 h-full border border-transparent hover:border-maroon-100">

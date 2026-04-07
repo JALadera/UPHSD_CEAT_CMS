@@ -7,7 +7,6 @@ use App\Http\Controllers\SuperadminDashboardController;
 use App\Http\Controllers\PublicDepartmentController;
 use App\Http\Controllers\PublicProgramController;
 use App\Http\Controllers\PublicFacultyController;
-use App\Http\Controllers\PublicResearchCenterController;
 use App\Http\Controllers\PublicNewsEventController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,8 +24,7 @@ Route::get('/programs/{program:slug}', [PublicProgramController::class, 'show'])
 Route::get('/faculty', [PublicFacultyController::class, 'index'])->name('view.faculty');
 Route::get('/faculty/{faculty}', [PublicFacultyController::class, 'show'])->name('view.faculty.show');
 
-Route::get('/research', [PublicResearchCenterController::class, 'index'])->name('view.research');
-Route::get('/research/{researchCenter:slug}', [PublicResearchCenterController::class, 'show'])->name('view.research.show');
+
 
 Route::get('/news', [PublicNewsEventController::class, 'index'])->name('view.news');
 Route::get('/news/{newsEvent:slug}', [PublicNewsEventController::class, 'show'])->name('view.news.show');

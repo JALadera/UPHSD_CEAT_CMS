@@ -42,7 +42,7 @@ A comprehensive Laravel 11 CMS for University of Perpetual Help System DALTA's C
     - 3 programs per department with curriculum
     - 8 courses per program
     - 5 faculty members per department
-    - 2 research centers per department
+    - 2  per department
     - 4 news/events per department
     - 10 additional news/events (total ~50+)
   - All relationships properly configured and constrained
@@ -62,15 +62,15 @@ A comprehensive Laravel 11 CMS for University of Perpetual Help System DALTA's C
 
 #### Database Setup
 - ✅ MySQL 8.0 configuration with proper credentials
-- ✅ 8 core entity migrations: departments, programs, courses, faculty_members, research_centers, news_events, users extension, permission tables
+- ✅ 8 core entity migrations: departments, programs, courses, faculty_members_centers, news_events, users extension, permission tables
 - ✅ All migrations executed and verified
 - ✅ Soft deletes enabled for content models
 
 #### Models Created
-- ✅ **Department** - Managing engineering departments with programs, faculty, research centers
+- ✅ **Department** - Managing engineering departments with programs, faculty centers
 - ✅ **Program** - Academic programs with curriculum structure and degree levels
 - ✅ **Course** - Individual courses mapped to programs with semester/year planning
-- ✅ **FacultyMember** - Faculty profiles with education, research interests, publications
+- ✅ **FacultyMember** - Faculty profiles with education interests, publications
 - ✅ **ResearchCenter** - Research facilities and centers with focus areas
 - ✅ **NewsEvent** - News items and events with status tracking
 
@@ -98,8 +98,8 @@ A comprehensive Laravel 11 CMS for University of Perpetual Help System DALTA's C
 - ✅ **DepartmentResource** - Full CRUD with rich editor, contact info, center of excellence flag
 - ✅ **ProgramResource** - Program management with degree level, duration, curriculum structure
 - ✅ **CourseResource** - Course management with semester/year planning, prerequisites
-- ✅ **FacultyMemberResource** - Faculty profiles with education, research, publications
-- ✅ **ResearchCenterResource** - Research center management with director info, research areas
+- ✅ **FacultyMemberResource** - Faculty profiles with education, publications
+- ✅ **ResearchCenterResource** - Research center management with director info areas
 - ✅ **NewsEventResource** - News/events publishing with scheduled dates, event details
 
 All resources feature:
@@ -116,7 +116,7 @@ Implemented realistic data generators for testing:
 - ✅ **ProgramFactory** - Creates programs linked to departments with degree levels
 - ✅ **CourseFactory** - Generates courses with codes, semester placement
 - ✅ **FacultyMemberFactory** - Creates faculty profiles with education history
-- ✅ **ResearchCenterFactory** - Generates research centers with focus areas
+- ✅ **ResearchCenterFactory** - Generates  with focus areas
 - ✅ **NewsEventFactory** - Creates news items and events with status
 
 ---
@@ -200,7 +200,7 @@ Implemented realistic data generators for testing:
   - Animated arrow on hover
   - Profile picture placeholder emoji
 
-#### Research & News Pages
+#### News Pages
 - Consistent hero sections
 - Grid layouts with hover effects
 - Image zoom on hover for news items
@@ -311,7 +311,7 @@ GET  /programs                          Program listing
 GET  /programs/{slug}                   Program detail
 GET  /faculty                           Faculty directory
 GET  /faculty/{id}                      Faculty profile
-GET  /research                          Research centers
+GET  /research                          
 GET  /research/{slug}                   Research center detail
 GET  /news                              News & events
 GET  /news/{slug}                       News/event detail
@@ -378,14 +378,14 @@ GET  /admin/resources/news-events       News/event CRUD
 - id, department_id (FK)
 - first_name, last_name, email, position, specialization
 - biography: longtext, photo: varchar(255)
-- education, research_interests, publications: json
+- education_interests, publications: json
 - is_active: boolean
 - timestamps, soft_deletes
 ```
 
 ### Other Entities
 - **Courses:** program_id, code, title, units, semester, year_level, prerequisites
-- **Research Centers:** department_id, name, director, research_areas, facilities
+- **Research Centers:** department_id, name, director_areas, facilities
 - **News Events:** department_id, title, content, type, status, published_at, event_date, location
 
 ---
@@ -505,7 +505,7 @@ Student:
 ### Phase 3: Public Website Completion
 - [ ] Complete program detail pages with curriculum visualization
 - [ ] Complete faculty detail pages with full profiles
-- [ ] Research centers detail pages enhancements
+- [ ]  detail pages enhancements
 - [ ] Advanced search functionality
 - [ ] SEO meta tags and structured data
 - [ ] Sitemap generation
@@ -654,7 +654,7 @@ php artisan serve --host=0.0.0.0 --port=8000
    - Eager loading for performance
 
 5. **View Files Created:**
-   - Research centers index and detail pages
+   -  index and detail pages
    - News/events index and detail pages
    - All with modern UI/UX design
 

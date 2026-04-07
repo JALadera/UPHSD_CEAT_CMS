@@ -64,14 +64,6 @@ class Department extends Model
     }
 
     /**
-     * Get all research centers in this department.
-     */
-    public function researchCenters(): HasMany
-    {
-        return $this->hasMany(ResearchCenter::class);
-    }
-
-    /**
      * Get all news and events for this department.
      */
     public function newsEvents(): HasMany

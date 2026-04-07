@@ -16,12 +16,11 @@ This is a full-featured Laravel 11 CMS with a redesigned modern frontend featuri
 
 ### Backend Infrastructure ✅
 - **Database**: SQLite (development) / MySQL (production-ready)
-- **8 Core Models** with relationships:
+- **7 Core Models** with relationships:
   - Users (with roles & permissions)
   - Departments
   - Programs
   - Faculty Members
-  - Research Centers
   - News & Events
   - Courses
   - Resources
@@ -37,12 +36,11 @@ This is a full-featured Laravel 11 CMS with a redesigned modern frontend featuri
 
 ### Admin Panel ✅
 - **Filament v3** admin interface
-- **6 CRUD Resources**:
+- **5 CRUD Resources**:
   - Users Management
   - Departments
   - Programs
   - Faculty Members
-  - Research Centers
   - News & Events
 
 - **Advanced features**:
@@ -57,7 +55,6 @@ This is a full-featured Laravel 11 CMS with a redesigned modern frontend featuri
   - Departments Index & Detail
   - Programs Index & Detail
   - Faculty Index & Detail
-  - Research Index & Detail
   - News Index & Detail
 
 - **Component Library**:
@@ -291,7 +288,6 @@ Coming in Phase 4:
 - `/api/departments` - List all departments
 - `/api/programs` - List all programs
 - `/api/faculty` - List all faculty
-- `/api/research` - List research centers
 - `/api/news` - List news articles
 
 ## 🗂️ File Locations

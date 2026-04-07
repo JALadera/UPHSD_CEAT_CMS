@@ -43,8 +43,7 @@ class ProgramResource extends Resource
                             ->label('URL Slug')
                             ->required()
                             ->unique(ignoreRecord: true)
-                            ->maxLength(255)
-                            ->generateFromFill('name'),
+                            ->maxLength(255),
                     ])->columns(2),
 
                 Forms\Components\Section::make('Program Details')

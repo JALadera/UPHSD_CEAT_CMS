@@ -40,8 +40,7 @@ class NewsEventResource extends Resource
                             ->label('URL Slug')
                             ->required()
                             ->unique(ignoreRecord: true)
-                            ->maxLength(255)
-                            ->generateFromFill('title'),
+                            ->maxLength(255),
                         Forms\Components\Select::make('type')
                             ->label('Type')
                             ->options([

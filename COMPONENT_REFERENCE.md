@@ -48,7 +48,7 @@ resources/views/components/
 - **Position**: Fixed, sticky on scroll
 - **Features**:
   - UPH logo with icon badge
-  - Desktop nav links (Departments, Programs, Faculty, Research, News)
+  - Desktop nav links (Departments, Programs, Faculty, News)
   - Authentication buttons (Dashboard/Sign In/Register)
   - Mobile hamburger menu with dropdown
   - Scroll-triggered background change
@@ -69,7 +69,7 @@ resources/views/components/
 - **Sections**:
   1. Brand info (logo, tagline)
   2. Academic links (Departments, Programs, Faculty)
-  3. Resources links (News, Research, Support)
+  3. Resources links (News, Support)
   4. Contact info (Email, Phone, Address)
   5. Bottom bar (Copyright, Policy links)
 
