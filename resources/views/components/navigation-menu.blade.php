@@ -21,7 +21,7 @@
                 @foreach($navigationItems as $itemKey => $item)
                     @if($item['hasDropdown'])
                         <!-- Dropdown Menu Item -->
-                        <div @mouseenter="openDropdown('{{ $itemKey }}')" 
+                        <div @mouseenter="if(!isScrolling) openDropdown('{{ $itemKey }}')" 
                              @mouseleave="closeDropdown()" 
                              class="relative">
                             <button class="nav-link flex items-center gap-2 px-4 py-6 font-medium text-sm transition-all duration-300 rounded-none hover:no-underline"
@@ -36,7 +36,7 @@
                             </button>
                             
                             <!-- Dropdown Content -->
-                            <div x-show="activeDropdown === '{{ $itemKey }}' && !isScrolling" 
+                            <div x-show="activeDropdown === '{{ $itemKey }}' && !isScrolling && !mobileOpen" 
                                  x-transition:enter="transition ease-out duration-150"
                                  x-transition:enter-start="opacity-0 -translate-y-2"
                                  x-transition:enter-end="opacity-100 translate-y-0"
@@ -177,16 +177,13 @@ function navigationMenu() {
             this.scrollListener = () => {
                 const scrollY = window.scrollY;
                 
-                // Mark as scrolling
+                // Mark as scrolling - IMMEDIATELY close dropdown
                 this.isScrolling = true;
+                this.activeDropdown = null;
+                this.mobileOpen = false;
                 
                 // Update scroll state for background color
                 this.isScrolled = scrollY > 100;
-                
-                // Close dropdown if position changed
-                if (scrollY !== this.lastScrollY) {
-                    this.activeDropdown = null;
-                }
                 
                 this.lastScrollY = scrollY;
                 
@@ -194,7 +191,7 @@ function navigationMenu() {
                 clearTimeout(this.scrollTimeout);
                 this.scrollTimeout = setTimeout(() => {
                     this.isScrolling = false;
-                }, 200);
+                }, 150);
             };
             
             // Attach listener with passive flag for better performance
