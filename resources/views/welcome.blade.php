@@ -206,7 +206,7 @@
                 Join our community of innovators and become part of UPHSD DALTA's College of Engineering, Architecture, and Technology legacy.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('register') }}" class="px-8 py-4 bg-primary-500 text-maroon-900 font-bold rounded-xl hover:bg-primary-400 hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-primary-400">
+                <a href="{{ route('register') }}" style="padding: 14px 32px; background: #8b0000; color: white; font-weight: 600; border-radius: 8px; text-decoration: none; display: inline-block; transition: all 0.3s ease; border: none; cursor: pointer; box-shadow: 0 5px 15px rgba(139, 0, 0, 0.2);" onmouseover="this.style.background='#6b0000'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(139, 0, 0, 0.3)';" onmouseout="this.style.background='#8b0000'; this.style.transform='translateY(0)'; this.style.boxShadow='0 5px 15px rgba(139, 0, 0, 0.2)';">
                     Enroll Now
                 </a>
                 <a href="{{ route('view.programs') }}" class="px-8 py-4 bg-white/10 text-white font-bold rounded-xl hover:bg-white/30 hover:shadow-2xl hover:shadow-white/20 transition-all duration-300 border border-white/30 hover:border-white hover:scale-110">

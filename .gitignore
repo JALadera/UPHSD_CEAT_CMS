@@ -26,10 +26,14 @@ yarn-error.log
 /*.md
 !README.md
 !IDE_SETUP.md
+!OAUTH_SETUP.md
 
 # Temporary test files
 /test_*.html
 /test_*.js
+
+# Composer files
+composer.phar
 
 # OS files
 .DS_Store

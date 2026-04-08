@@ -10,6 +10,7 @@ use App\Http\Controllers\PublicFacultyController;
 use App\Http\Controllers\PublicNewsEventController;
 use App\Http\Controllers\PublicAboutController;
 use App\Http\Controllers\PublicCurriculumController;
+use App\Http\Controllers\OAuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,6 +46,9 @@ Route::get('/student/portal', function () {
 // Legacy routes (kept for backward compatibility)
 Route::get('/about', [PublicAboutController::class, 'index'])->name('view.about');
 
+// OAuth routes
+Route::get('/auth/{provider}/redirect', [OAuthController::class, 'redirect'])->name('oauth.redirect');
+Route::get('/auth/{provider}/callback', [OAuthController::class, 'callback'])->name('oauth.callback');
 
 Route::get('/programs', [PublicProgramController::class, 'index'])->name('view.programs');
 Route::get('/programs/{program:slug}', [PublicProgramController::class, 'show'])->name('view.programs.show');
