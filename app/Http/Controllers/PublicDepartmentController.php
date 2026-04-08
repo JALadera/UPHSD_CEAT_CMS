@@ -14,7 +14,7 @@ class PublicDepartmentController extends Controller
      */
     public function index(): View
     {
-        $departments = Department::with(['programs', 'facultyMembers', 'researchCenters'])
+        $departments = Department::with(['programs', 'facultyMembers'])
             ->get();
 
         return view('public.departments.index', [
@@ -27,7 +27,7 @@ class PublicDepartmentController extends Controller
      */
     public function show(Department $department): View
     {
-        $department->load(['programs', 'facultyMembers', 'researchCenters']);
+        $department->load(['programs', 'facultyMembers']);
 
         return view('public.departments.show', [
             'department' => $department,

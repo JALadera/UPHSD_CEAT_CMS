@@ -88,10 +88,10 @@
                     </h3>
                     <div class="space-y-2">
                         @foreach([
-                            ['route' => 'view.departments', 'icon' => '🏛️', 'label' => 'Departments', 'bg' => 'bg-maroon-100'],
-                            ['route' => 'view.programs', 'icon' => '🎓', 'label' => 'Programs', 'bg' => 'bg-primary-100'],
-                            ['route' => 'view.faculty', 'icon' => '👥', 'label' => 'Faculty Members', 'bg' => 'bg-emerald-100'],
-                            ['route' => 'view.news', 'icon' => '📰', 'label' => 'News & Events', 'bg' => 'bg-sky-100'],
+                            ['route' => 'departments.index', 'icon' => '🏛️', 'label' => 'Departments', 'bg' => 'bg-maroon-100'],
+                            ['route' => 'programs.index', 'icon' => '🎓', 'label' => 'Programs', 'bg' => 'bg-primary-100'],
+                            ['route' => 'faculty.index', 'icon' => '👥', 'label' => 'Faculty Members', 'bg' => 'bg-emerald-100'],
+                            ['route' => 'news.index', 'icon' => '📰', 'label' => 'News & Events', 'bg' => 'bg-sky-100'],
                         ] as $item)
                         <a href="{{ route($item['route']) ?? '#' }}" class="flex items-center justify-between p-3 rounded-xl hover:bg-maroon-50/50 transition-all duration-300 group">
                             <div class="flex items-center gap-3">

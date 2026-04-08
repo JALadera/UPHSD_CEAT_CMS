@@ -83,10 +83,15 @@ class FacultyMemberResource extends Resource
 
                 Forms\Components\Section::make('Media')
                     ->schema([
-                        Forms\Components\TextInput::make('photo')
-                            ->label('Photo URL')
-                            ->url()
-                            ->maxLength(255),
+                        Forms\Components\FileUpload::make('photo')
+                            ->label('Faculty Photo')
+                            ->image()
+                            ->imageEditor()
+                            ->disk('public')
+                            ->directory('faculty')
+                            ->maxSize(5120) // 5MB
+                            ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                            ->helperText('Upload a photo (JPEG, PNG, or WebP). Max 5MB.'),
                     ]),
 
                 Forms\Components\Section::make('Status')

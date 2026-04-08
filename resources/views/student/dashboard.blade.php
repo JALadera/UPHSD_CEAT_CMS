@@ -51,6 +51,8 @@
                     </div>
                 </a>
 
+
+
                 <a href="{{ route('view.news') }}" class="group">
                     <div class="bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 p-6 h-full border border-transparent hover:border-maroon-100">
                         <div class="w-12 h-12 bg-gradient-to-br from-sky-50 to-sky-100 rounded-xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform duration-300">📰</div>

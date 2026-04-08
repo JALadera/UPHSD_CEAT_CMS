@@ -56,28 +56,28 @@
                         Content Management
                     </h3>
                     <div class="space-y-2">
-                        <a href="{{ route('view.departments') ?? '#' }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
+                        <a href="{{ url('/admin/departments') }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
                             <div class="flex items-center gap-3">
                                 <span class="w-8 h-8 bg-maroon-100 rounded-lg flex items-center justify-center text-sm">🏛️</span>
                                 <span class="font-medium text-gray-900 group-hover:text-maroon-600 transition-colors">Manage Departments</span>
                             </div>
                             <svg class="w-5 h-5 text-gray-300 group-hover:text-maroon-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>
-                        <a href="{{ route('view.programs') ?? '#' }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
+                        <a href="{{ url('/admin/programs') }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
                             <div class="flex items-center gap-3">
                                 <span class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center text-sm">🎓</span>
                                 <span class="font-medium text-gray-900 group-hover:text-maroon-600 transition-colors">Manage Programs</span>
                             </div>
                             <svg class="w-5 h-5 text-gray-300 group-hover:text-maroon-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>
-                        <a href="{{ route('view.faculty') ?? '#' }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
+                        <a href="{{ url('/admin/faculty-members') }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
                             <div class="flex items-center gap-3">
                                 <span class="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-sm">👥</span>
                                 <span class="font-medium text-gray-900 group-hover:text-maroon-600 transition-colors">Manage Faculty</span>
                             </div>
                             <svg class="w-5 h-5 text-gray-300 group-hover:text-maroon-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                         </a>
-                        <a href="{{ route('view.news') ?? '#' }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
+                        <a href="{{ url('/admin/news-events') }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
                             <div class="flex items-center gap-3">
                                 <span class="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center text-sm">📰</span>
                                 <span class="font-medium text-gray-900 group-hover:text-maroon-600 transition-colors">Manage News & Events</span>
@@ -94,9 +94,14 @@
                         Quick Actions
                     </h3>
                     <div class="space-y-2">
-                        <a href="{{ route('view.research') ?? '#' }}" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
+                        <a href="#" class="flex items-center justify-between p-4 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
                             <div class="flex items-center gap-3">
-                                <span class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-sm">🔬</span>
+                                <span class="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center text-sm">📋</span>
+                                <span class="font-medium text-gray-900 group-hover:text-maroon-600 transition-colors">View Students</span>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-300 group-hover:text-maroon-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </a>
+
                         <div class="p-4 rounded-xl border border-gray-100 bg-gray-50/50">
                             <div class="flex items-center gap-3">
                                 <span class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-sm">📊</span>

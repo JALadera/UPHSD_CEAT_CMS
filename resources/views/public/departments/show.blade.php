@@ -44,10 +44,7 @@
                 <div class="text-3xl font-extrabold text-maroon-600">{{ $department->facultyMembers->count() }}</div>
                 <p class="text-sm text-gray-500 mt-1 font-medium">Faculty</p>
             </div>
-            <div class="stat-card text-center">
-                <div class="text-3xl font-extrabold text-maroon-600">{{ $department->researchCenters->count() }}</div>
-                <p class="text-sm text-gray-500 mt-1 font-medium">Research Centers</p>
-            </div>
+
             <div class="stat-card text-center">
                 <div class="text-3xl font-extrabold text-maroon-600">{{ $department->is_center_of_excellence ? '★' : '—' }}</div>
                 <p class="text-sm text-gray-500 mt-1 font-medium">CoE Status</p>
@@ -214,23 +211,7 @@
                     </div>
                 </div>
 
-                <!-- Research Centers -->
-                @if($department->researchCenters->count() > 0)
-                <div class="card-premium p-6 animate-fade-in-right animation-delay-100">
-                    <h3 class="font-bold text-gray-900 mb-5 flex items-center gap-2">
-                        <svg class="w-5 h-5 text-maroon-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
-                        Research Centers
-                    </h3>
-                    <div class="space-y-3">
-                        @foreach($department->researchCenters as $center)
-                        <a href="{{ route('view.research.show', $center) }}" class="block p-3 rounded-xl border border-gray-100 hover:border-maroon-200 hover:bg-maroon-50/30 transition-all duration-300 group">
-                            <p class="font-semibold text-gray-900 text-sm group-hover:text-maroon-600 transition-colors">{{ $center->name }}</p>
-                            <p class="text-xs text-gray-500 mt-1 line-clamp-2">{{ Str::limit(strip_tags($center->description), 80) }}</p>
-                        </a>
-                        @endforeach
-                    </div>
-                </div>
-                @endif
+
 
                 <!-- CTA -->
                 <div class="bg-gradient-to-br from-maroon-500 to-maroon-700 rounded-2xl p-6 text-white relative overflow-hidden animate-fade-in-right animation-delay-200">

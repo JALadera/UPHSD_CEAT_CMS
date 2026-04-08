@@ -9,6 +9,50 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * @property int $id
+ * @property int $department_id
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $email
+ * @property string|null $position
+ * @property string|null $specialization
+ * @property string|null $biography
+ * @property string|null $photo
+ * @property array<array-key, mixed>|null $education
+ * @property array<array-key, mixed>|null $research_interests
+ * @property array<array-key, mixed>|null $publications
+ * @property bool $is_active
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Models\Department|null $department
+ * @property-read string $full_name
+ * @method static \Database\Factories\FacultyMemberFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember query()
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereBiography($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereDepartmentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereEducation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember wherePhoto($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember wherePosition($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember wherePublications($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereResearchInterests($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereSpecialization($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember withTrashed(bool $withTrashed = true)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|FacultyMember withoutTrashed()
+ * @mixin \Eloquent
+ */
 class FacultyMember extends Model
 {
     use HasFactory, SoftDeletes;
