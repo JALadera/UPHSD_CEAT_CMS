@@ -43,7 +43,8 @@ class FacultyMemberResource extends Resource
                             ->label('Email Address')
                             ->email()
                             ->required()
-                            ->maxLength(255),
+                            ->maxLength(255)
+                            ->unique(table: 'faculty_members', column: 'email', ignoreRecord: true),
                     ])->columns(2),
 
                 Forms\Components\Section::make('Academic Information')

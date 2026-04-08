@@ -10,17 +10,59 @@ use Illuminate\View\View;
 class PublicNewsEventController extends Controller
 {
     /**
+     * Display all news/events with filtering and pagination.
+     */
+    public function all(): View
+    {
+        $type = request('type', 'all');
+
+        if ($type === 'events') {
+            $items = NewsEvent::where('status', 'published')
+                ->where('type', 'event')
+                ->with('department')
+                ->orderBy('event_date', 'desc')
+                ->paginate(12);
+            $title = 'All Events';
+        } else {
+            $items = NewsEvent::where('status', 'published')
+                ->where('type', '!=', 'event')
+                ->with('department')
+                ->orderBy('published_at', 'desc')
+                ->paginate(12);
+            $title = 'All News';
+        }
+
+        return view('public.news.all', [
+            'items' => $items,
+            'type' => $type,
+            'title' => $title,
+        ]);
+    }
+
+    /**
      * Display a listing of news and events.
      */
     public function index(): View
     {
-        $newsEvents = NewsEvent::where('status', 'published')
+        // Get upcoming events
+        $upcomingEvents = NewsEvent::where('status', 'published')
+            ->where('type', 'event')
+            ->with('department')
+            ->orderBy('event_date', 'desc')
+            ->limit(6)
+            ->get();
+
+        // Get latest news
+        $latestNews = NewsEvent::where('status', 'published')
+            ->where('type', '!=', 'event')
             ->with('department')
             ->orderBy('published_at', 'desc')
-            ->paginate(12);
+            ->limit(6)
+            ->get();
 
         return view('public.news.index', [
-            'newsEvents' => $newsEvents,
+            'upcomingEvents' => $upcomingEvents,
+            'latestNews' => $latestNews,
         ]);
     }
 

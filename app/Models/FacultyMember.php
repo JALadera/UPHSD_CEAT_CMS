@@ -87,6 +87,24 @@ class FacultyMember extends Model
         return $this->belongsTo(Department::class);
     }
 
+    /**
+     * Get the photo URL
+     */
+    public function getPhotoAttribute($value)
+    {
+        if (!$value) {
+            return null;
+        }
+        
+        // If it's already a full URL, return it
+        if (str_starts_with($value, 'http')) {
+            return $value;
+        }
+        
+        // Convert to asset URL for public disk
+        return asset('storage/' . $value);
+    }
+
     public function getFullNameAttribute(): string
     {
         return "{$this->first_name} {$this->last_name}";

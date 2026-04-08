@@ -29,9 +29,13 @@
                         <div class="h-1.5 bg-gradient-to-r from-maroon-500 to-primary-500 rounded-t-2xl"></div>
                         <div class="p-6">
                             <div class="flex items-start gap-4 mb-4">
-                                <div class="w-16 h-16 bg-gradient-to-br from-maroon-400 to-maroon-600 rounded-2xl flex items-center justify-center text-white text-lg font-bold shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-md">
-                                    {{ strtoupper(substr($member->first_name, 0, 1) . substr($member->last_name, 0, 1)) }}
-                                </div>
+                                @if($member->photo)
+                                    <img src="{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->last_name }}" class="w-16 h-16 rounded-2xl object-cover shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-md">
+                                @else
+                                    <div class="w-16 h-16 bg-gradient-to-br from-maroon-400 to-maroon-600 rounded-2xl flex items-center justify-center text-white text-lg font-bold shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-md">
+                                        {{ strtoupper(substr($member->first_name, 0, 1) . substr($member->last_name, 0, 1)) }}
+                                    </div>
+                                @endif
                                 <div class="min-w-0">
                                     <h3 class="text-lg font-bold text-gray-900 group-hover:text-maroon-600 transition-colors">{{ $member->first_name }} {{ $member->last_name }}</h3>
                                     <span class="badge badge-gold mt-1">{{ $member->position }}</span>

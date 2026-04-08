@@ -21,6 +21,7 @@
                 @foreach($navigationItems as $itemKey => $item)
                     @if($item['hasDropdown'])
                         <!-- Dropdown Menu Item -->
+                        <!-- Dropdown Menu Item -->
                         <div @mouseenter="openDropdown('{{ $itemKey }}')" 
                              @mouseleave="closeDropdown()" 
                              class="relative">
@@ -259,6 +260,10 @@ function navigationMenu() {
 
 .nav-link:hover::after {
     width: 80%;
+}
+
+.nav-link:hover svg {
+    transform: rotate(-180deg);
 }
 
 .dropdown-link {

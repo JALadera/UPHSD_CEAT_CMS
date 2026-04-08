@@ -10,10 +10,19 @@ use App\Http\Controllers\PublicFacultyController;
 use App\Http\Controllers\PublicNewsEventController;
 use App\Http\Controllers\PublicAboutController;
 use App\Http\Controllers\PublicCurriculumController;
+use App\Models\NewsEvent;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $latestNewsEvents = NewsEvent::where('status', 'published')
+        ->with('department')
+        ->orderBy('published_at', 'desc')
+        ->limit(3)
+        ->get();
+    
+    return view('welcome', [
+        'latestNewsEvents' => $latestNewsEvents,
+    ]);
 })->name('home');
 
 // Public Routes (accessible without authentication)
@@ -55,6 +64,7 @@ Route::get('/faculty/{faculty}', [PublicFacultyController::class, 'show'])->name
 
 
 Route::get('/news', [PublicNewsEventController::class, 'index'])->name('view.news');
+Route::get('/news/all', [PublicNewsEventController::class, 'all'])->name('view.news.all');
 Route::get('/news/{newsEvent:slug}', [PublicNewsEventController::class, 'show'])->name('view.news.show');
 
 // Authenticated routes

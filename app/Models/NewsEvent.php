@@ -76,6 +76,24 @@ class NewsEvent extends Model
         ];
     }
 
+    /**
+     * Get the featured image URL
+     */
+    public function getFeaturedImageAttribute($value)
+    {
+        if (!$value) {
+            return null;
+        }
+        
+        // If it's already a full URL, return it
+        if (str_starts_with($value, 'http')) {
+            return $value;
+        }
+        
+        // Convert to asset URL for public disk
+        return asset('storage/' . $value);
+    }
+
     public function department(): BelongsTo
     {
         return $this->belongsTo(Department::class);

@@ -1,3 +1,4 @@
+### Laravel ###
 /.phpunit.cache
 /node_modules
 /public/build
@@ -8,33 +9,70 @@
 /vendor
 .env
 .env.backup
-.env.production
+.env.production.backup
+.env.local
+.env.*.local
+
+### IDE & Editor Files ###
 .phpactor.json
 .phpunit.result.cache
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
-/auth.json
 /.fleet
 /.idea
 /.nova
 /.vscode
 /.zed
-
-# Temporary documentation files
-/*.md
-!README.md
-!IDE_SETUP.md
-
-# Temporary test files
-/test_*.html
-/test_*.js
-
-# OS files
+*.sublime-project
+*.sublime-workspace
 .DS_Store
 Thumbs.db
 
-# Build artifacts that shouldn't be committed
-public/build
+### Build & Package Files ###
+npm-debug.log
+npm-debug.log*
+yarn-error.log
+yarn-error.log*
+/auth.json
+composer.lock
+package-lock.json
+
+### Node ###
+node_modules/
 dist/
+build/
+
+### Testing ###
+/test_*.html
+/test_*.js
+/.pytest_cache
+.coverage
+
+### Logs ###
+*.log
+/storage/logs/*
+!/.gitkeep
+
+### Database ###
+*.sqlite
+*.sqlite3
+database.db
+
+### OS Files ###
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+._*
+
+### Homestead ###
+Homestead.json
+Homestead.yaml
+
+### Documentation ###
+*.md
+!README.md
+!IDE_SETUP.md
+
+### Cache & Temporary ###
+.cache/
+tmp/
+temp/

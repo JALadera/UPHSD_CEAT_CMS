@@ -19,7 +19,6 @@ class NavigationComposer
             'items' => [
                 ['label' => 'The College', 'url' => '/about/college'],
                 ['label' => 'History', 'url' => '/about/history'],
-                ['label' => 'Mission & Vision', 'url' => '/about/mission'],
             ],
         ],
         'Academics' => [
