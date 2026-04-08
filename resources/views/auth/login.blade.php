@@ -250,6 +250,16 @@
                                 {{ __('Create Account') }}
                             </button>
                         </form>
+
+                        <!-- Back to Login -->
+                        <div class="mt-6 text-center">
+                            <p class="text-gray-600 text-sm">
+                                Already have an account?
+                                <a href="#" @click.prevent="isRegister = false" class="text-maroon-600 hover:text-maroon-700 font-bold transition-colors">
+                                    Sign in here
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
