@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'UPH Engineering') }} - Authentication</title>
+    <title>CEAT</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -474,7 +474,7 @@
     <div class="auth-container">
         <div class="auth-box" id="authBox">
             <!-- LOGIN FORM -->
-            <div class="form-column login-form visible-form" id="loginForm">
+            <div class="form-column login-form visible-form" id="loginForm" style="position: relative;">
                 <x-auth-session-status class="mb-6" :status="session('status')" />
 
                 <div class="mb-8">
@@ -556,7 +556,7 @@
             </div>
 
             <!-- REGISTER FORM -->
-            <div class="form-column register-form hidden-form" id="registerForm">
+            <div class="form-column register-form hidden-form" id="registerForm" style="position: relative;">
                 <div class="mb-8">
                     <h2 style="font-size: 32px; font-weight: 700; color: #1f2937; margin: 0 0 8px 0;">Create Account</h2>
                     <p style="font-size: 14px; color: #6b7280; margin: 0;">Join thousands of engineering students shaping the future</p>
@@ -602,7 +602,12 @@
             </div>
 
             <!-- LOGIN BRAND PANEL -->
-            <div class="brand-panel login-panel" id="loginBrand">
+            <div class="brand-panel login-panel" id="loginBrand" style="position: relative;">
+                <a href="{{ route('home') }}" style="position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; transition: all 0.3s ease; z-index: 10;" class="hover:bg-white hover:bg-opacity-30 hover:scale-110" title="Back to Home">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
+                    </svg>
+                </a>
                 <div class="brand-content">
                     <div class="logo-badge">
                         <div class="logo-icon">
@@ -633,7 +638,12 @@
             </div>
 
             <!-- REGISTER BRAND PANEL -->
-            <div class="brand-panel register-panel hidden-form" id="registerBrand">
+            <div class="brand-panel register-panel hidden-form" id="registerBrand" style="position: relative;">
+                <a href="{{ route('home') }}" style="position: absolute; top: 62px; right: 50px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; transition: all 0.3s ease; z-index: 10;" class="hover:bg-white hover:bg-opacity-30 hover:scale-110" title="Back to Home">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
+                    </svg>
+                </a>
                 <div class="brand-content">
                     <div class="logo-badge">
                         <div class="logo-icon">

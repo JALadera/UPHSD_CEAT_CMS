@@ -413,6 +413,7 @@
 
         .password-field-wrapper input {
             flex: 1;
+            padding-right: 40px;
         }
 
         .password-toggle {
@@ -421,13 +422,17 @@
             background: none;
             border: none;
             cursor: pointer;
-            display: flex;
+            display: none;
             align-items: center;
             justify-content: center;
             width: 36px;
             height: 36px;
             color: #6b7280;
             transition: color 0.2s ease;
+        }
+
+        .password-toggle.visible {
+            display: flex;
         }
 
         .password-toggle:hover {
@@ -469,7 +474,7 @@
     <div class="auth-container">
         <div class="auth-box" id="authBox">
             <!-- LOGIN FORM -->
-            <div class="form-column login-form hidden-form" id="loginForm" style="position: relative;">
+            <div class="form-column login-form visible-form" id="loginForm">
                 <x-auth-session-status class="mb-6" :status="session('status')" />
 
                 <div class="mb-8">
@@ -488,7 +493,15 @@
 
                     <div class="form-group">
                         <label style="display: block; font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 8px;">Password</label>
-                        <input type="password" name="password" class="input-field" placeholder="Enter your password" required autocomplete="current-password" />
+                        <div class="password-field-wrapper">
+                            <input type="password" name="password" class="input-field" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password" oninput="toggleLoginPasswordIcon()" />
+                            <button type="button" class="password-toggle" id="loginToggleBtn" onclick="toggleLoginPassword(event)">
+                                <svg id="loginPasswordIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7C7.523 19 3.732 16.057 2.458 12z"></path>
+                                </svg>
+                            </button>
+                        </div>
                         @error('password')<p style="color: #dc2626; font-size: 13px; margin-top: 5px;">{{ $message }}</p>@enderror
                     </div>
 
@@ -525,6 +538,7 @@
                         Google
                     </a>
                     <a href="{{ route('oauth.redirect', 'microsoft') }}" class="btn-secondary" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; color: #8b0000;">
+
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                             <rect x="2" y="2" width="9" height="9" fill="#F25022"/>
                             <rect x="13" y="2" width="9" height="9" fill="#7FBA00"/>
@@ -542,7 +556,7 @@
             </div>
 
             <!-- REGISTER FORM -->
-            <div class="form-column register-form visible-form order-left" id="registerForm" style="position: relative;">
+            <div class="form-column register-form hidden-form" id="registerForm">
                 <div class="mb-8">
                     <h2 style="font-size: 32px; font-weight: 700; color: #1f2937; margin: 0 0 8px 0;">Create Account</h2>
                     <p style="font-size: 14px; color: #6b7280; margin: 0;">Join thousands of engineering students shaping the future</p>
@@ -565,29 +579,13 @@
 
                     <div class="form-group">
                         <label style="display: block; font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 8px;">Password</label>
-                        <div class="password-field-wrapper">
-                            <input type="password" name="password" class="input-field" id="registerPassword" placeholder="••••••••" required autocomplete="new-password" oninput="toggleRegisterPasswordIcon('registerPassword')" />
-                            <button type="button" class="password-toggle" id="registerPasswordToggleBtn" onclick="toggleRegisterPassword(event, 'registerPassword')">
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7C7.523 19 3.732 16.057 2.458 12z"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        <input type="password" name="password" class="input-field" placeholder="••••••••" required autocomplete="new-password" />
                         @error('password')<p style="color: #dc2626; font-size: 13px; margin-top: 5px;">{{ $message }}</p>@enderror
                     </div>
 
                     <div class="form-group">
                         <label style="display: block; font-size: 14px; font-weight: 600; color: #374151; margin-bottom: 8px;">Confirm Password</label>
-                        <div class="password-field-wrapper">
-                            <input type="password" name="password_confirmation" class="input-field" id="registerConfirmPassword" placeholder="••••••••" required autocomplete="new-password" oninput="toggleRegisterPasswordIcon('registerConfirmPassword')" />
-                            <button type="button" class="password-toggle" id="registerConfirmPasswordToggleBtn" onclick="toggleRegisterPassword(event, 'registerConfirmPassword')">
-                                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7C7.523 19 3.732 16.057 2.458 12z"></path>
-                                </svg>
-                            </button>
-                        </div>
+                        <input type="password" name="password_confirmation" class="input-field" placeholder="••••••••" required autocomplete="new-password" />
                         @error('password_confirmation')<p style="color: #dc2626; font-size: 13px; margin-top: 5px;">{{ $message }}</p>@enderror
                     </div>
 
@@ -599,17 +597,12 @@
 
                 <p style="text-align: center; font-size: 14px; color: #6b7280; margin-top: 30px;">
                     Already have an account?
-                    <a href="{{ route('login') }}" style="color: #fb923c; text-decoration: none; font-weight: 600;">Sign in here</a>
+                    <a href="#" onclick="switchToLogin(event)" style="color: #fb923c; text-decoration: none; font-weight: 600;">Sign in here</a>
                 </p>
             </div>
 
             <!-- LOGIN BRAND PANEL -->
-            <div class="brand-panel login-panel hidden-form" id="loginBrand" style="position: relative;">
-                <a href="{{ route('home') }}" style="position: absolute; top: 62px; right: 50px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; transition: all 0.3s ease; z-index: 10;" class="hover:bg-white hover:bg-opacity-30 hover:scale-110" title="Back to Home">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
-                    </svg>
-                </a>
+            <div class="brand-panel login-panel" id="loginBrand">
                 <div class="brand-content">
                     <div class="logo-badge">
                         <div class="logo-icon">
@@ -640,12 +633,7 @@
             </div>
 
             <!-- REGISTER BRAND PANEL -->
-            <div class="brand-panel register-panel visible-form order-right" id="registerBrand" style="position: relative;">
-                <a href="{{ route('home') }}" style="position: absolute; top: 62px; right: 50px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; transition: all 0.3s ease; z-index: 10;" class="hover:bg-white hover:bg-opacity-30 hover:scale-110" title="Back to Home">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
-                    </svg>
-                </a>
+            <div class="brand-panel register-panel hidden-form" id="registerBrand">
                 <div class="brand-content">
                     <div class="logo-badge">
                         <div class="logo-icon">
@@ -694,7 +682,7 @@
     </div>
 
     <script>
-        let currentMode = 'register';
+        let currentMode = 'login';
 
         function switchToRegister(e) {
             e.preventDefault();
@@ -762,6 +750,18 @@
             }, 400);
         }
 
+        function toggleLoginPasswordIcon() {
+            const passwordInput = document.getElementById('loginPassword');
+            const toggleBtn = document.getElementById('loginToggleBtn');
+            
+            if (passwordInput.value.length > 0) {
+                toggleBtn.classList.add('visible');
+            } else {
+                toggleBtn.classList.remove('visible');
+                passwordInput.type = 'password';
+            }
+        }
+
         function toggleLoginPassword(e) {
             e.preventDefault();
             const passwordInput = document.getElementById('loginPassword');
@@ -775,18 +775,6 @@
                 passwordInput.type = 'password';
                 // Change icon back to open eye
                 icon.innerHTML = '<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7C7.523 19 3.732 16.057 2.458 12z"></path>';
-            }
-        }
-
-        function toggleRegisterPasswordIcon(fieldId) {
-            const passwordInput = document.getElementById(fieldId);
-            const toggleBtn = fieldId === 'registerPassword' ? document.getElementById('registerPasswordToggleBtn') : document.getElementById('registerConfirmPasswordToggleBtn');
-            
-            if (passwordInput.value.length > 0) {
-                toggleBtn.classList.add('visible');
-            } else {
-                toggleBtn.classList.remove('visible');
-                passwordInput.type = 'password';
             }
         }
 
@@ -805,8 +793,6 @@
                 icon.innerHTML = '<path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7C7.523 19 3.732 16.057 2.458 12z"></path>';
             }
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
             const loginFormElement = document.getElementById('loginFormElement');
             const registerFormElement = document.getElementById('registerFormElement');
             const loginSubmitBtn = document.getElementById('loginSubmitBtn');

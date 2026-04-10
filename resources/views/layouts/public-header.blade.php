@@ -26,8 +26,11 @@
                 @auth
                 <a href="{{ route('dashboard') }}" style="background-color: #ffc700; color: #7f1416; font-weight: 700; font-size: 14px; padding: 8px 16px; display: inline-block; border-radius: 6px; transition: all 0.3s ease;" class="hover:shadow-lg hover:shadow-yellow-400 hover:scale-110">Dashboard</a>
                 @else
-                <a href="{{ route('login') }}" :style="`${isScrolled ? 'color: white;' : 'color: #7f1416;'} transition: all 0.3s ease;`" style="font-weight: 600; font-size: 14px; padding: 8px 16px; display: inline-block;" :class="isScrolled ? 'hover:bg-white/20 hover:rounded-lg hover:scale-105' : 'hover:bg-maroon-100 hover:rounded-lg hover:scale-105'">Sign In</a>
-                <a href="{{ route('register') }}" style="background-color: #ffc700; color: #7f1416; font-weight: 700; font-size: 14px; padding: 8px 16px; display: inline-block; border-radius: 6px; transition: all 0.3s ease;" class="hover:shadow-lg hover:shadow-yellow-400 hover:scale-110">Register</a>
+                <a href="{{ route('login') }}" :style="`${isScrolled ? 'color: white;' : 'color: #7f1416;'} transition: all 0.3s ease; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%;`" :class="isScrolled ? 'hover:bg-white/20 hover:scale-110' : 'hover:bg-maroon-100 hover:scale-110'" style="transition: all 0.3s ease;" title="Login">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </a>
                 @endauth
             </div>
 
@@ -53,8 +56,12 @@
                 @auth
                 <a href="{{ route('dashboard') }}" style="background-color: #ffc700; color: #7f1416; font-weight: 700; font-size: 14px; padding: 10px 16px; display: block; text-align: center; border-radius: 6px;">Dashboard</a>
                 @else
-                <a href="{{ route('login') }}" :style="isScrolled ? 'color: white;' : 'color: #7f1416;'" style="font-weight: 600; font-size: 14px; padding: 10px 16px; display: block; text-align: center; transition-colors duration-300;">Sign In</a>
-                <a href="{{ route('register') }}" style="background-color: #ffc700; color: #7f1416; font-weight: 700; font-size: 14px; padding: 10px 16px; display: block; text-align: center; border-radius: 6px;">Register</a>
+                <a href="{{ route('login') }}" :style="isScrolled ? 'color: white;' : 'color: #7f1416;'" style="font-weight: 600; font-size: 14px; padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 8px; transition-colors duration-300;">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                    Login
+                </a>
                 @endauth
             </div>
         </div>

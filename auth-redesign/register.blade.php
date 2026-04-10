@@ -469,7 +469,7 @@
     <div class="auth-container">
         <div class="auth-box" id="authBox">
             <!-- LOGIN FORM -->
-            <div class="form-column login-form hidden-form" id="loginForm" style="position: relative;">
+            <div class="form-column login-form hidden-form" id="loginForm">
                 <x-auth-session-status class="mb-6" :status="session('status')" />
 
                 <div class="mb-8">
@@ -542,7 +542,7 @@
             </div>
 
             <!-- REGISTER FORM -->
-            <div class="form-column register-form visible-form order-left" id="registerForm" style="position: relative;">
+            <div class="form-column register-form visible-form order-left" id="registerForm">
                 <div class="mb-8">
                     <h2 style="font-size: 32px; font-weight: 700; color: #1f2937; margin: 0 0 8px 0;">Create Account</h2>
                     <p style="font-size: 14px; color: #6b7280; margin: 0;">Join thousands of engineering students shaping the future</p>
@@ -599,17 +599,12 @@
 
                 <p style="text-align: center; font-size: 14px; color: #6b7280; margin-top: 30px;">
                     Already have an account?
-                    <a href="{{ route('login') }}" style="color: #fb923c; text-decoration: none; font-weight: 600;">Sign in here</a>
+                    <a href="#" onclick="switchToLogin(event)" style="color: #fb923c; text-decoration: none; font-weight: 600;">Sign in here</a>
                 </p>
             </div>
 
             <!-- LOGIN BRAND PANEL -->
-            <div class="brand-panel login-panel hidden-form" id="loginBrand" style="position: relative;">
-                <a href="{{ route('home') }}" style="position: absolute; top: 62px; right: 50px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; transition: all 0.3s ease; z-index: 10;" class="hover:bg-white hover:bg-opacity-30 hover:scale-110" title="Back to Home">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
-                    </svg>
-                </a>
+            <div class="brand-panel login-panel hidden-form" id="loginBrand">
                 <div class="brand-content">
                     <div class="logo-badge">
                         <div class="logo-icon">
@@ -640,16 +635,13 @@
             </div>
 
             <!-- REGISTER BRAND PANEL -->
-            <div class="brand-panel register-panel visible-form order-right" id="registerBrand" style="position: relative;">
-                <a href="{{ route('home') }}" style="position: absolute; top: 62px; right: 50px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; transition: all 0.3s ease; z-index: 10;" class="hover:bg-white hover:bg-opacity-30 hover:scale-110" title="Back to Home">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"/>
-                    </svg>
-                </a>
+            <div class="brand-panel register-panel visible-form order-right" id="registerBrand">
                 <div class="brand-content">
                     <div class="logo-badge">
                         <div class="logo-icon">
-                            <img src="{{ asset('images/coe-logo.png') }}" alt="UPHSD Logo" />
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"></path>
+                            </svg>
                         </div>
                         <div>
                             <div style="font-weight: 700; font-size: 15px;">UPHSD</div>

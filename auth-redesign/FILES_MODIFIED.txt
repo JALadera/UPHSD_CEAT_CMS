@@ -1,0 +1,96 @@
+AUTH REDESIGN - MODIFIED FILES REFERENCE
+==========================================
+
+FRONTEND VIEWS (Blade Templates):
+----------------------------------
+✅ resources/views/auth/login.blade.php
+   - Two-column layout (form 55%, panel 45%)
+   - Password visibility toggle
+   - OAuth buttons (Google, Microsoft)
+   - Page fade animations
+   - Location: resources/views/auth/login.blade.php
+
+✅ resources/views/auth/register.blade.php
+   - Mirror layout of login page
+   - Two password fields with individual toggles
+   - OAuth buttons (Google, Microsoft)
+   - Page fade animations
+   - Location: resources/views/auth/register.blade.php
+
+✅ resources/views/welcome.blade.php
+   - Updated "Enroll Now" button styling
+   - Maroon color (#8b0000) for consistency
+   - Location: resources/views/welcome.blade.php
+
+BACKEND CONTROLLERS:
+--------------------
+✅ app/Http/Controllers/OAuthController.php (NEW FILE)
+   - OAuth redirect handler
+   - OAuth callback handler
+   - Auto user creation with verified email
+   - Location: app/Http/Controllers/OAuthController.php
+
+ROUTING & CONFIGURATION:
+------------------------
+✅ routes/web.php
+   - Added oauth.redirect route
+   - Added oauth.callback route
+   - Location: routes/web.php
+
+✅ config/services.php
+   - Added Google OAuth configuration
+   - Added Microsoft OAuth configuration
+   - Location: config/services.php
+
+VERSION CONTROL:
+----------------
+✅ .gitignore
+   - Added composer.phar exclusion
+   - Added Laravel Sail exclusion
+   - Location: .gitignore
+
+QUICK ACCESS COMMANDS:
+======================
+
+View Login Changes:
+  code resources/views/auth/login.blade.php
+
+View Register Changes:
+  code resources/views/auth/register.blade.php
+
+View OAuth Controller:
+  code app/Http/Controllers/OAuthController.php
+
+View Route Changes:
+  code routes/web.php
+
+View Config Changes:
+  code config/services.php
+
+See All Changes Diffs:
+  git diff HEAD~3 HEAD --name-only
+
+See Detailed Diffs:
+  git diff HEAD~3 HEAD
+
+FEATURE CHECKLIST:
+==================
+✅ Two-column auth layout
+✅ Maroon brand panel with logo
+✅ Password visibility toggle (eye icon)
+✅ Eye icon shows only when typing
+✅ Google OAuth integration
+✅ Microsoft OAuth integration
+✅ Full-page fade animations
+✅ Form switching between login/register
+✅ Smooth transitions (0.6s opacity)
+✅ Responsive design
+✅ OAuth controller with auto user creation
+✅ Route protection and naming
+✅ Services configuration for OAuth
+
+TOTAL FILES MODIFIED: 7
+TOTAL LINES ADDED: ~2,000+
+COMMITS PUSHED: 3
+BRANCH: feature/auth-redesign-oauth
+STATUS: ✅ Ready for Pull Request

@@ -75,9 +75,14 @@
                 @auth
                     <a href="{{ route('dashboard') }}" class="btn-primary px-5 py-2 font-bold text-sm rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105" style="background-color: #ffc700; color: #7f1416;">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="btn-secondary px-4 py-2 font-semibold text-sm rounded-lg transition-all duration-300"
-                       :style="`color: ${isScrolled ? 'white' : '#7f1416'};`">Sign In</a>
-                    <a href="{{ route('register') }}" class="btn-primary px-5 py-2 font-bold text-sm rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105" style="background-color: #ffc700; color: #7f1416;">Register</a>
+                    <a href="{{ route('login') }}" class="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:scale-110"
+                       :style="`color: ${isScrolled ? 'white' : '#7f1416'};`"
+                       :class="isScrolled ? 'hover:bg-white/20' : 'hover:bg-maroon-100'"
+                       title="Login">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </a>
                 @endauth
             </div>
 
@@ -146,9 +151,13 @@
                 @auth
                     <a href="{{ route('dashboard') }}" class="btn-primary px-4 py-2 font-bold text-sm text-center rounded-lg transition-all duration-300" style="background-color: #ffc700; color: #7f1416;">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="btn-secondary px-4 py-2 font-semibold text-sm text-center rounded-lg transition-all duration-300"
-                       :style="`color: ${isScrolled ? 'white' : '#7f1416'}; border: 1px solid currentColor;`">Sign In</a>
-                    <a href="{{ route('register') }}" class="btn-primary px-4 py-2 font-bold text-sm text-center rounded-lg transition-all duration-300" style="background-color: #ffc700; color: #7f1416;">Register</a>
+                    <a href="{{ route('login') }}" class="btn-secondary px-4 py-2 font-semibold text-sm text-center rounded-lg transition-all duration-300 flex items-center justify-center gap-2"
+                       :style="`color: ${isScrolled ? 'white' : '#7f1416'}; border: 1px solid currentColor;`">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                        Login
+                    </a>
                 @endauth
             </div>
         </div>
