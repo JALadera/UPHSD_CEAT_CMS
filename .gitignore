@@ -26,14 +26,10 @@ yarn-error.log
 /*.md
 !README.md
 !IDE_SETUP.md
-!OAUTH_SETUP.md
 
 # Temporary test files
 /test_*.html
 /test_*.js
-
-# Composer files
-composer.phar
 
 # OS files
 .DS_Store
@@ -42,3 +38,11 @@ Thumbs.db
 # Build artifacts that shouldn't be committed
 public/build
 dist/
+
+# Composer
+composer.phar
+composer.lock
+
+# Laravel Sail
+/.sail
+/sail
